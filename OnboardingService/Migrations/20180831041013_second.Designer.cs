@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OnboardingService.Models;
 
 namespace OnboardingService.Migrations
 {
     [DbContext(typeof(UserContext))]
-    partial class UserContextModelSnapshot : ModelSnapshot
+    [Migration("20180831041013_second")]
+    partial class second
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,14 +28,14 @@ namespace OnboardingService.Migrations
 
                     b.Property<string>("Designation");
 
+                    b.Property<string>("Email")
+                        .IsRequired();
+
                     b.Property<string>("FirstName");
 
                     b.Property<string>("LastName");
 
                     b.Property<string>("Password")
-                        .IsRequired();
-
-                    b.Property<string>("Username")
                         .IsRequired();
 
                     b.Property<string>("WorkspaceName");

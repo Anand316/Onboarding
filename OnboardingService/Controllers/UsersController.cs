@@ -64,7 +64,7 @@ namespace OnboardingService.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(user).State = EntityState.Modified;
+            _context.User.Update(user);
 
             try
             {
@@ -74,7 +74,6 @@ namespace OnboardingService.Controllers
             {
                 if (!UserExists(id))
                 {
-                    return NotFound();
                 }
                 else
                 {
@@ -100,8 +99,8 @@ namespace OnboardingService.Controllers
             return CreatedAtAction("GetUser", new { id = user.UserId }, user);
         }
 
-        // DELETE: api/Users/5
-        [HttpDelete("{id}")]
+        // DELETE: api/Users/
+        [HttpDelete("delete/{id}")]
         public async Task<IActionResult> DeleteUser([FromRoute] int id)
         {
             if (!ModelState.IsValid)
@@ -110,6 +109,7 @@ namespace OnboardingService.Controllers
             }
 
             var user = await _context.User.FindAsync(id);
+            //var user = _context.User.Where(s => s.FirstName == name) as User;
             if (user == null)
             {
                 return NotFound();

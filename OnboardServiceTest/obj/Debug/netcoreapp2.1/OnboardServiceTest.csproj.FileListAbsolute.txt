@@ -1,0 +1,17 @@
+D:\workspace\aspdotnet\OnboardingService\OnboardServiceTest\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+D:\workspace\aspdotnet\OnboardingService\OnboardServiceTest\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+D:\workspace\aspdotnet\OnboardingService\OnboardServiceTest\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+D:\workspace\aspdotnet\OnboardingService\OnboardServiceTest\bin\Debug\netcoreapp2.1\OnboardServiceTest.deps.json
+D:\workspace\aspdotnet\OnboardingService\OnboardServiceTest\bin\Debug\netcoreapp2.1\OnboardServiceTest.runtimeconfig.json
+D:\workspace\aspdotnet\OnboardingService\OnboardServiceTest\bin\Debug\netcoreapp2.1\OnboardServiceTest.runtimeconfig.dev.json
+D:\workspace\aspdotnet\OnboardingService\OnboardServiceTest\bin\Debug\netcoreapp2.1\OnboardServiceTest.dll
+D:\workspace\aspdotnet\OnboardingService\OnboardServiceTest\bin\Debug\netcoreapp2.1\OnboardingService.dll
+D:\workspace\aspdotnet\OnboardingService\OnboardServiceTest\bin\Debug\netcoreapp2.1\OnboardingService.pdb
+D:\workspace\aspdotnet\OnboardingService\OnboardServiceTest\obj\Debug\netcoreapp2.1\OnboardServiceTest.csprojAssemblyReference.cache
+D:\workspace\aspdotnet\OnboardingService\OnboardServiceTest\obj\Debug\netcoreapp2.1\OnboardServiceTest.csproj.CoreCompileInputs.cache
+D:\workspace\aspdotnet\OnboardingService\OnboardServiceTest\obj\Debug\netcoreapp2.1\OnboardServiceTest.AssemblyInfoInputs.cache
+D:\workspace\aspdotnet\OnboardingService\OnboardServiceTest\obj\Debug\netcoreapp2.1\OnboardServiceTest.AssemblyInfo.cs
+D:\workspace\aspdotnet\OnboardingService\OnboardServiceTest\obj\Debug\netcoreapp2.1\OnboardServiceTest.csproj.CopyComplete
+D:\workspace\aspdotnet\OnboardingService\OnboardServiceTest\bin\Debug\netcoreapp2.1\OnboardServiceTest.pdb
+D:\workspace\aspdotnet\OnboardingService\OnboardServiceTest\obj\Debug\netcoreapp2.1\OnboardServiceTest.dll
+D:\workspace\aspdotnet\OnboardingService\OnboardServiceTest\obj\Debug\netcoreapp2.1\OnboardServiceTest.pdb

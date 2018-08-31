@@ -32,6 +32,9 @@ namespace OnboardingService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            var connection = @"Server = db;Database=master;User=sa;Password=Your_password123";
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddSwaggerGen(c =>
@@ -39,12 +42,6 @@ namespace OnboardingService
                 c.SwaggerDoc("v1", new Info { Title = "First API using SWAGGER", Version = "v1" });
             });
 
-            services.AddAuthorization(auth =>
-            {
-                auth.AddPolicy("Bearer", new AuthorizationPolicyBuilder()
-                    .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme‌​)
-                    .RequireAuthenticatedUser().Build());
-            });
 
             services.AddAuthentication(
                 options =>
@@ -72,7 +69,7 @@ namespace OnboardingService
 
 
             services.AddDbContext<UserContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("UserContext")));
+                    options.UseSqlServer(connection));
 
             services.AddCors(o => o.AddPolicy("AppPolicy", builder =>
             builder.AllowAnyHeader()
@@ -103,6 +100,9 @@ namespace OnboardingService
                 //c.RoutePrefix = string.Empty;
 
             });
+
+            var context = app.ApplicationServices.GetService<UserContext>();
+            context.Database.Migrate();
 
             app.UseHttpsRedirection();
             app.UseMvc();

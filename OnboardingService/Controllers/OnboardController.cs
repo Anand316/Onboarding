@@ -29,15 +29,16 @@ namespace OnboardingService.Controllers
         public async Task<IActionResult> Login([FromBody] LoginViewModel Model)
         {
             var user = await context.User.Where(existUser => 
-            existUser.Email == Model.UserName
-            && existUser.Password==Model.Password)
+            existUser.Username == Model.Username
+            && existUser.Password==Model.Password
+            && existUser.WorkspaceName==Model.WorkspaceName)
             .FirstOrDefaultAsync();
 
             if (user != null)
             {
                 var claims = new[]
                 {
-                    new Claim(JwtRegisteredClaimNames.Email,user.Email),
+                    new Claim(JwtRegisteredClaimNames.Email,user.Username),
                 };
 
                 var signinKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("MySuperSecureKey"));
@@ -68,7 +69,25 @@ namespace OnboardingService.Controllers
             context.User.Add(user);
             await context.SaveChangesAsync();
 
-            return Ok();
+            return CreatedAtAction("GetUser", new { id = user.UserId }, user);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetUser([FromRoute] int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var user = await context.User.FindAsync(id);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(user);
         }
     }
 }
